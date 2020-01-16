@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-const readline = require("readline-sync");
 var path = require("path")
 app.use(express.urlencoded());
 
