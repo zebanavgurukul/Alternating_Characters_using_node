@@ -21,7 +21,7 @@ app.post("/api", (req, res) => {
                 datastore = word[i]; 
             } 
         } 
-        return res.send(count); 
+        return res.json({count}); 
     } 
     console.log(getCountDeleting(input))
 });
