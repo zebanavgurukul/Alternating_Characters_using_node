@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-app.use(express.json());
 var path = require("path")
 app.use(express.urlencoded());
 
@@ -13,7 +12,8 @@ app.post("/api", (req, res) => {
     function getCountDeleting(word){ 
         var count = 0; 
         datastore = word[0];
-        for (var i = 1, l = word.length; i < l; i++) {
+        let l = word.length;
+        for (var i = 1; i < l; i++) {
             if (word[i] === datastore) {
                 count ++ ;
             } 
@@ -21,9 +21,9 @@ app.post("/api", (req, res) => {
                 datastore = word[i]; 
             } 
         } 
-        return res.json({count}); 
+        res.json({count}); 
     } 
-    console.log(getCountDeleting(input))
+    getCountDeleting(input)
 });
 
 app.listen(4000, () => {
